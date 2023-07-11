@@ -247,7 +247,13 @@
                   <label for="telefone"
                     >TELEFONE <span class="required">*</span></label
                   >
-                  <input type="text" id="telefone" name="telefone" required />
+                  <input
+                    type="text"
+                    id="telefone"
+                    name="telefone"
+                    required
+                    maxlength="14"
+                  />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
                 <div>
@@ -290,8 +296,20 @@
               <div>
                 <div>
                   <label for="cep">CEP <span class="required">*</span></label>
-                  <input type="text" id="cep" name="cep" required />
+                  <input
+                    type="text"
+                    id="cep"
+                    name="cep"
+                    maxlength="9"
+                    required
+                  />
                   <p class="input-invalido">Este campo é obrigatório</p>
+                  <button
+                    type="button"
+                    onclick="consultaCEP(document.getElementById('cep').value)"
+                  >
+                    Consultar CEP
+                  </button>
                 </div>
                 <div data-user="paciente">
                   <label for="estado"

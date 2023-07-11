@@ -2,7 +2,89 @@ console.log('form-script loaded')
 const form = document.getElementById('form')
 let tipoUsuarioSelecionado = 'paciente'
 
+function preencheCEP(response) {
+  const estado = document.getElementById('estado')
+  estado.value = response.uf
+  const cidade = document.getElementById('cidade')
+  cidade.value = response.localidade
+}
+
+function consultaCEP(cep) {
+  const parsedCEP = cep.replace(/-/, '')
+  const url = 'https://viacep.com.br/ws/' + parsedCEP + '/json'
+  const request = new XMLHttpRequest()
+  const localErro = document.getElementById('cep').nextElementSibling
+
+  request.open('GET', url)
+  request.onerror = function (e) {
+    localErro.innerHTML =
+      'Algum erro ocorreu. Tente novamente ou consulte suporte.'
+    localErro.style.display = 'block'
+    console.log('ERRO = ', e)
+  }
+
+  request.onload = () => {
+    const response = JSON.parse(request.responseText)
+
+    if (response.erro === true) {
+      localErro.innerHTML = 'CEP Não Encontrado'
+      localErro.style.display = 'block'
+      return
+    } else {
+      console.log('response = ', response)
+      preencheCEP(response)
+      localErro.style.display = 'none'
+    }
+  }
+
+  request.send()
+}
+
+function telefonesMascara() {
+  const idsTelefones = ['telefone', 'telefoneRepresentante', 'telefoneMedico']
+  for (tipoTelefone of idsTelefones) {
+    const input = document.getElementById(tipoTelefone)
+    input.addEventListener('input', (ev) => {
+      const tamanho = ev.target.value.length
+      let cpf = ev.target.value
+      if (isNaN(Number(cpf.charAt(tamanho - 1)))) {
+        cpf = cpf.substr(0, tamanho - 1)
+      }
+    })
+
+    input.addEventListener('keydown', (ev) => {
+      const keyCode = ev.key
+      if (
+        keyCode === 'Meta' ||
+        keyCode === 'Delete' ||
+        keyCode === 'Backspace' ||
+        ev.target.value.length > ev.target.maxLength
+      )
+        return
+
+      const input = ev.target.value
+      const tamanho = ev.target.value.length
+      if (tamanho < 3 && ev.target.value.includes('('))
+        document.getElementById(ev.target.id).value = document
+          .getElementById(ev.target.id)
+          .value.replace('(', '')
+      if (tamanho === 2 || (input.startsWith('(') && !input.includes(')'))) {
+        const exp = /(\d{2})/
+        const alterado = document
+          .getElementById(ev.target.id)
+          .value.replace(exp, '($1)')
+        document.getElementById(ev.target.id).value = alterado
+      }
+      if (tamanho === 9) {
+        const alterado = document.getElementById(ev.target.id).value + '-'
+        document.getElementById(ev.target.id).value = alterado
+      }
+    })
+  }
+}
+
 function mascaras() {
+  telefonesMascara()
   const cpfInput = document.getElementById('cpf')
   cpfInput.addEventListener('input', (ev) => {
     const tamanho = ev.target.value.length
@@ -51,6 +133,18 @@ function mascaras() {
     if (tamanho === 3 || tamanho === 7)
       document.getElementById('cpf').value += '.'
     if (tamanho === 11) document.getElementById('cpf').value += '-'
+  })
+
+  document.getElementById('cep').addEventListener('keyup', (ev) => {
+    const keyCode = ev.key
+    if (keyCode === 'Meta' || keyCode === 'Delete' || keyCode === 'Backspace')
+      return
+    const tamanho = ev.target.value.length
+    if (tamanho === 8) {
+      const alterado =
+        ev.target.value.substr(0, 5) + '-' + ev.target.value.substr(5)
+      document.getElementById(ev.target.id).value = alterado
+    }
   })
 }
 
