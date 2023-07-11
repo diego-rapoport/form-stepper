@@ -248,6 +248,7 @@ function confirmaCampos() {
     const mensagemErro = document.getElementById('confirma_senha')
     mensagemErro.innerHTML = 'As senhas não correspondem'
     mensagemErro.style.display = 'block'
+    return false
   }
 
   // const email = document.getElementById('reg_email').value
@@ -257,6 +258,8 @@ function confirmaCampos() {
   // mensagemErro.innerHTML = 'Os emails não correspondem'
   // mensagemErro.style.display = 'block'
   // }
+
+  return true
 }
 
 function formControl() {
@@ -268,8 +271,8 @@ function formControl() {
       if (element.innerText === 'Continuar') {
         limpaAviso(step - 1)
         const formValido = confereForm(step - 1)
-        confirmaCampos()
-        if (!formValido) return
+        const confirmado = confirmaCampos()
+        if (!formValido || !confirmado) return
       } else limpaAviso(step)
 
       const current = document
