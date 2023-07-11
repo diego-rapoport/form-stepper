@@ -2,6 +2,33 @@ console.log('form-script loaded')
 const form = document.getElementById('form')
 let tipoUsuarioSelecionado = 'paciente'
 
+function mascaras() {
+  const cpfInput = document.getElementById('cpf')
+  cpfInput.addEventListener('input', (ev) => {
+    const tamanho = ev.target.value.length
+    let cpf = ev.target.value
+    if (isNaN(Number(cpf.charAt(tamanho - 1)))) {
+      cpf = cpf.substr(0, tamanho - 1)
+    }
+  })
+
+  cpfInput.addEventListener('keydown', (ev) => {
+    const keyCode = ev.key
+    if (
+      keyCode === 'Meta' ||
+      keyCode === 'Delete' ||
+      keyCode === 'Backspace' ||
+      ev.target.value.length > 14
+    )
+      return
+    const cpf = ev.target.value
+    const tamanho = cpf.length
+    if (tamanho === 3 || tamanho === 7)
+      document.getElementById('cpf').value += '.'
+    if (tamanho === 11) document.getElementById('cpf').value += '-'
+  })
+}
+
 function menorDeDezoito(dataNascimento) {
   const dateNascimento = new Date(dataNascimento)
   const diff = Date.now() - dateNascimento.getTime()
@@ -252,5 +279,6 @@ function setPrimeiro() {
 
 window.onload = function () {
   formControl()
+  mascaras()
   // confereForm()
 }
