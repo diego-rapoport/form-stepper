@@ -1,0 +1,68 @@
+.base-flex {
+  display: flex;
+}
+
+.steps .step {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 25px;
+  background-color: #f2f4f7;
+  border: 3px solid #f2f4f7;
+  border-radius: 50px;
+  margin: 1rem 9rem;
+  z-index: 1;
+}
+
+.steps .step.current {
+  background-color: #8cc6f2;
+}
+
+.steps .step.complete {
+  background-color: #6ecba4;
+}
+
+.step-content {
+  display: none;
+}
+
+.step-content.current {
+  display: block;
+  margin: 2rem 8rem;
+}
+
+.survey-form .step-content.current {
+  display: block;
+}
+
+.input-invalido {
+  color: darkred;
+  display: none;
+}
+
+.input-invalido::before {
+  font-family: Dashicons;
+  font-size: calc(100% + 10px);
+  content: '\f534';
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.is-layout-flex {
+  display: flex;
+  align-items: center;
+}
+
+.lista-receitas {
+  border: 1px black solid;
+  /* display: none */
+}
+
+input {
+  max-width: 70%;
+  height: 2rem;
+}
