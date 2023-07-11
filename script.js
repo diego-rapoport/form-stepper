@@ -283,10 +283,12 @@ function formControl() {
         .querySelector("[data-step='" + element.dataset.setStep + "']")
         .classList.add('current')
 
-      document
+      const stepCurrent = document
         .getElementsByClassName('step current')
         .item(0)
-        .classList.remove('current')
+      stepCurrent.classList.remove('current')
+      stepCurrent.classList.add('passou')
+
       document
         .querySelector("[data-step-control='" + element.dataset.setStep + "']")
         .classList.add('current')

@@ -2,24 +2,72 @@
   display: flex;
 }
 
-.steps .step {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 25px;
-  background-color: #f2f4f7;
-  border: 3px solid #f2f4f7;
-  border-radius: 50px;
-  margin: 1rem 9rem;
-  z-index: 1;
+.steps li {
+  list-style-type: none;
+  float: left;
+  width: 33%;
+  position: relative;
+  text-align: center;
 }
 
-.steps .step.current {
-  background-color: #8cc6f2;
+.steps li:before {
+  content: ' ';
+  line-height: 30px;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #ddd;
+  border-left: none;
+  display: block;
+  text-align: center;
+  margin: 2px auto 0px;
+  background-color: #eee;
+  padding: 0.5rem;
 }
 
-.steps .step.complete {
-  background-color: #6ecba4;
+.steps li:after {
+  content: '';
+  position: absolute;
+  width: 97%;
+  height: 5px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  border-right: none;
+  top: 15px;
+  left: -50%;
+  z-index: -1;
+}
+
+.steps li:first-child:after {
+  content: none;
+}
+
+.steps li.current {
+  color: black;
+}
+
+.steps li.current:before {
+  border-color: black;
+  background-color: black;
+}
+
+.steps .current:after {
+  background-color: black;
+}
+
+.steps .passou:after {
+  background-color: black;
+}
+
+.passou:before {
+  background-color: black !important;
+  border-color: black !important;
+}
+
+.numero {
+  position: relative;
+  bottom: 2.8rem;
+  color: white;
 }
 
 .step-content {
