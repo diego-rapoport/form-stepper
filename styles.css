@@ -23,6 +23,12 @@ input {
   display: flex;
 }
 
+.steps {
+  height: 2rem;
+  padding: 0;
+  margin: 1rem 1rem 0 1rem;
+}
+
 .steps li {
   list-style-type: none;
   float: left;
@@ -102,8 +108,11 @@ input {
 }
 
 .step-content.current {
-  display: block;
-  margin: 2rem 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 4rem;
 }
 
 .survey-form .step-content.current {
@@ -123,8 +132,12 @@ input {
 
 .form-row {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-around;
+  align-items: flex-start;
+  align-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
 .is-layout-flex {
