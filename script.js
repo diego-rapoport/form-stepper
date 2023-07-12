@@ -416,6 +416,10 @@ function formControl() {
       mostraErro(upload, 'É preciso escolher o tipo de receita acima')
       return
     }
+    if (!nomeReceita) {
+      mostraErro(upload, 'É preciso escolher um arquivo')
+      return
+    }
     upload.nextElementSibling.style.display = 'none'
     upload.value = ''
 
