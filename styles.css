@@ -70,6 +70,12 @@
   color: white;
 }
 
+.numero-inativo {
+  position: relative;
+  bottom: 2.8rem;
+  color: black;
+}
+
 .step-content {
   display: none;
 }
@@ -107,7 +113,6 @@
 
 .lista-receitas {
   border: 1px black solid;
-  /* display: none */
 }
 
 input {

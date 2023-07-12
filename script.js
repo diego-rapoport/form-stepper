@@ -262,6 +262,59 @@ function confirmaCampos() {
   return true
 }
 
+function stepPraTras(numStep) {
+  const numStepAtual = parseInt(numStep) + 1
+  const stepAtual = document.querySelector(
+    "[data-step-control='" + numStepAtual + "']"
+  )
+  stepAtual.classList.remove('current')
+  stepAtual.childNodes.item(1).classList = ['numero-inativo']
+  const stepAnterior = document.querySelector(
+    "[data-step-control='" + numStep + "']"
+  )
+  stepAnterior.classList.remove('passou')
+  stepAnterior.classList.add('current')
+}
+
+function contentPraTras(dataStep) {
+  const numContentAtual = parseInt(dataStep) + 1
+  const contentAtual = document.querySelector(
+    "[data-step='" + numContentAtual + "']"
+  )
+  contentAtual.classList.remove('current')
+  const contentAnterior = document.querySelector(
+    "[data-step='" + dataStep + "']"
+  )
+  contentAnterior.classList.add('current')
+}
+
+function stepPraFrente(numStep) {
+  const numStepAtual = parseInt(numStep) - 1
+  const stepAtual = document.querySelector(
+    "[data-step-control='" + numStepAtual + "']"
+  )
+  stepAtual.classList.remove('current')
+  stepAtual.classList.add('passou')
+
+  const proxStep = document.querySelector(
+    "[data-step-control='" + numStep + "']"
+  )
+  proxStep.classList.add('current')
+  proxStep.childNodes.item(1).classList = ['numero']
+}
+
+function contentPraFrente(dataStep) {
+  const numContentAtual = parseInt(dataStep) - 1
+  const contentAtual = document.querySelector(
+    "[data-step='" + numContentAtual + "']"
+  )
+  contentAtual.classList.remove('current')
+  const proximoContent = document.querySelector(
+    "[data-step='" + dataStep + "']"
+  )
+  proximoContent.classList.add('current')
+}
+
 function formControl() {
   document.querySelectorAll('[data-set-step]').forEach((element) => {
     const step = element.dataset.setStep
@@ -273,27 +326,16 @@ function formControl() {
         const formValido = confereForm(step - 1)
         const confirmado = confirmaCampos()
         if (!formValido || !confirmado) return
-      } else limpaAviso(step)
-
-      const current = document
-        .getElementsByClassName('step-content current')
-        .item(0)
-      current.classList.remove('current')
-      document
-        .querySelector("[data-step='" + element.dataset.setStep + "']")
-        .classList.add('current')
-
-      const stepCurrent = document
-        .getElementsByClassName('step current')
-        .item(0)
-      stepCurrent.classList.remove('current')
-      stepCurrent.classList.add('passou')
-
-      document
-        .querySelector("[data-step-control='" + element.dataset.setStep + "']")
-        .classList.add('current')
+        stepPraFrente(step)
+        contentPraFrente(step)
+      } else {
+        limpaAviso(step)
+        stepPraTras(step)
+        contentPraTras(step)
+      }
     }
   })
+
   document.getElementsByName('tipoUsuario').forEach((tipoUsuario) => {
     tipoUsuario.addEventListener('click', (e) => {
       switch (e.target.id) {
@@ -397,12 +439,13 @@ function formControl() {
 }
 
 function setPrimeiro() {
-  document.querySelector("[data-step-control='1']").classList.add('current')
+  const stepUm = document.querySelector("[data-step-control='1']")
+  stepUm.classList.add('current')
+  stepUm.childNodes.item(1).classList = ['numero']
   document.querySelector("[data-step='1']").classList.add('current')
 }
 
 window.onload = function () {
   formControl()
   mascaras()
-  // confereForm()
 }

@@ -3,11 +3,7 @@
   <div class="col2-set row row-divided row-large" id="customer_login">
     <div class="col-2 large-6 col pb-0">
       <div class="account-register-inner">
-        <form
-          method="post"
-          class="woocommerce-form woocommerce-form-register register"
-          id="form"
-        >
+        <form method="post" class="woocommerce-form woocommerce-form-register register" id="form">
           <h4>
             Precisamos saber quem é você
             <span class="required">*</span>
@@ -17,91 +13,51 @@
             <label for="userPaciente">Paciente</label>
           </div>
           <div class="is-layout-flex base-row">
-            <input
-              id="userRepresentante"
-              type="radio"
-              name="tipoUsuario"
-              required
-            />
+            <input id="userRepresentante" type="radio" name="tipoUsuario" required />
             <label for="userRepresentante">Representante do Paciente</label>
           </div>
 
           <ul class="steps base-flex">
-            <li class="step" data-step-control="1"><p class="numero">1</p></li>
-            <li class="step" data-step-control="2"><p class="numero">2</p></li>
-            <li class="step" data-step-control="3"><p class="numero">3</p></li>
-            <li class="step" data-step-control="4"><p class="numero">4</p></li>
+            <li class="step" data-step-control="1">
+              <p class="numero-inativo">1</p>
+            </li>
+            <li class="step" data-step-control="2">
+              <p class="numero-inativo">2</p>
+            </li>
+            <li class="step" data-step-control="3">
+              <p class="numero-inativo">3</p>
+            </li>
+            <li class="step" data-step-control="4">
+              <p class="numero-inativo">4</p>
+            </li>
           </ul>
 
           <div class="step-content" data-step="1">
-            <div
-              class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
-            >
-              <label for="reg_username"
-                >Usuário <span class="required">*</span></label
-              >
-              <input
-                type="text"
-                class="woocommerce-Input woocommerce-Input--text input-text"
-                name="username"
-                id="reg_username"
-                autocomplete="username"
-                required
-              />
+            <div class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+              <label for="reg_username">Usuário <span class="required">*</span></label>
+              <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username"
+                id="reg_username" autocomplete="username" required />
               <p class="input-invalido">Este campo é obrigatório</p>
             </div>
-            <div
-              class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
-            >
-              <label for="reg_email"
-                >Email <span class="required">*</span></label
-              >
-              <input
-                type="email"
-                class="woocommerce-Input woocommerce-Input--text input-text"
-                name="email"
-                id="reg_email"
-                autocomplete="email"
-                required
-              />
+            <div class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+              <label for="reg_email">Email <span class="required">*</span></label>
+              <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email"
+                id="reg_email" autocomplete="email" required />
               <p class="input-invalido">Este campo é obrigatório</p>
             </div>
-            <div
-              class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
-            >
-              <label for="reg_password"
-                >Senha: <span class="required">*</span></label
-              >
-              <input
-                type="password"
-                class="woocommerce-Input woocommerce-Input--text input-text"
-                name="password"
-                id="reg_password"
-                autocomplete="new-password"
-                required
-              />
+            <div class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+              <label for="reg_password">Senha: <span class="required">*</span></label>
+              <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password"
+                id="reg_password" autocomplete="new-password" required />
               <p class="input-invalido">Este campo é obrigatório</p>
             </div>
-            <div
-              class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
-            >
-              <label for="conf_reg_password"
-                >Confirme sua senha: <span class="required">*</span></label
-              >
-              <input
-                type="password"
-                class="woocommerce-Input woocommerce-Input--text input-text"
-                name="conf_password"
-                id="conf_reg_password"
-                autocomplete="new-password"
-                required
-              />
+            <div class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+              <label for="conf_reg_password">Confirme sua senha: <span class="required">*</span></label>
+              <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="conf_password"
+                id="conf_reg_password" autocomplete="new-password" required />
               <p id="confirma_senha" class="input-invalido">
                 Este campo é obrigatório
               </p>
-              <button onclick="toggleSenha(event)" class="dashicons-hidden">
-                Olho da tigresa
-              </button>
             </div>
             <hr />
             <div class="buttons">
@@ -114,146 +70,73 @@
               <div data-user="representante">
                 <h5 class="form-title">REPRESENTANTE DO PACIENTE:</h5>
                 <div class="base-row">
-                  <label for="nomeRepresentante"
-                    >NOME COMPLETO DO REPRESENTANTE
-                    <span class="required">*</span></label
-                  >
-                  <input
-                    type="text"
-                    id="nomeRepresentante"
-                    name="nomeRepresentante"
-                    required
-                    class="woocommerce-Input woocommerce-Input--text input-text"
-                  />
+                  <label for="nomeRepresentante">NOME COMPLETO DO REPRESENTANTE
+                    <span class="required">*</span></label>
+                  <input type="text" id="nomeRepresentante" name="nomeRepresentante" required
+                    class="woocommerce-Input woocommerce-Input--text input-text" />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
                 <div class="base-row">
-                  <label for="tituloRepresentante"
-                    >QUEM É VOCÊ PARA O PACIENTE
-                    <span class="required">*</span></label
-                  >
-                  <input
-                    type="text"
-                    id="tituloRepresentante"
-                    name="tituloRepresentante"
-                    required
-                  />
+                  <label for="tituloRepresentante">QUEM É VOCÊ PARA O PACIENTE
+                    <span class="required">*</span></label>
+                  <input type="text" id="tituloRepresentante" name="tituloRepresentante" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
                 <div>
                   <div class="base-row">
-                    <label for="cpfRepresentante"
-                      >CPF <span class="required">*</span></label
-                    >
-                    <input
-                      type="text"
-                      id="cpfRepresentante"
-                      name="cpfRepresentante"
-                      maxlength="14"
-                      required
-                    />
+                    <label for="cpfRepresentante">CPF <span class="required">*</span></label>
+                    <input type="text" id="cpfRepresentante" name="cpfRepresentante" maxlength="14" required />
                     <p class="input-invalido">Este campo é obrigatório</p>
                   </div>
                   <div class="base-row">
-                    <label for="telefoneRepresentante"
-                      >TELEFONE <span class="required">*</span></label
-                    >
-                    <input
-                      type="text"
-                      id="telefoneRepresentante"
-                      name="telefoneRepresentante"
-                      required
-                    />
+                    <label for="telefoneRepresentante">TELEFONE <span class="required">*</span></label>
+                    <input type="text" id="telefoneRepresentante" name="telefoneRepresentante" required />
                     <p class="input-invalido">Este campo é obrigatório</p>
                   </div>
                 </div>
                 <div class="base-row">
-                  <label for="anexoDocRepresentante"
-                    >ANEXE UM DOCUMENTO (CPF, RG OU CNH)
-                    <span class="required">*</span></label
-                  >
-                  <input
-                    id="anexoDocRepresentante"
-                    type="file"
-                    accept=".png,.pdf,.jpg"
-                    name="anexoDocRepresentante"
-                    required
-                    onchange="escolheArquivo(event)"
-                  />
+                  <label for="anexoDocRepresentante">ANEXE UM DOCUMENTO (CPF, RG OU CNH)
+                    <span class="required">*</span></label>
+                  <input id="anexoDocRepresentante" type="file" accept=".png,.pdf,.jpg" name="anexoDocRepresentante"
+                    required onchange="escolheArquivo(event)" />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
                 <div class="base-row">
-                  <label for="anexoVinculo"
-                    >COMPROVANTE DE VÍNCULO
-                    <span class="required">*</span></label
-                  >
-                  <input
-                    id="anexoVinculo"
-                    type="file"
-                    onchange="escolheArquivo(event)"
-                    accept=".png,.pdf,.jpg"
-                    name="anexoVinculo"
-                    required
-                  />
+                  <label for="anexoVinculo">COMPROVANTE DE VÍNCULO
+                    <span class="required">*</span></label>
+                  <input id="anexoVinculo" type="file" onchange="escolheArquivo(event)" accept=".png,.pdf,.jpg"
+                    name="anexoVinculo" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
               </div>
 
               <h5 class="form-title">PACIENTE:</h5>
               <div class="base-row">
-                <label for="nomePaciente"
-                  >NOME COMPLETO DO PACIENTE
-                  <span class="required">*</span></label
-                >
+                <label for="nomePaciente">NOME COMPLETO DO PACIENTE
+                  <span class="required">*</span></label>
                 <legend>
                   POR FAVOR, INFORM SEU NOME POR EXTENSO, COMO CONSTA NO SEU
                   DOCUMENTO
                 </legend>
-                <input
-                  type="text"
-                  id="nomePaciente"
-                  name="nomePaciente"
-                  required
-                />
+                <input type="text" id="nomePaciente" name="nomePaciente" required />
                 <p class="input-invalido">Este campo é obrigatório</p>
               </div>
               <div>
                 <div>
-                  <label for="dataNascimento"
-                    >NASCIMENTO <span class="required">*</span></label
-                  >
-                  <input
-                    type="date"
-                    id="dataNascimento"
-                    name="dataNascimento"
-                    required
-                  />
+                  <label for="dataNascimento">NASCIMENTO <span class="required">*</span></label>
+                  <input type="date" id="dataNascimento" name="dataNascimento" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
                 <div>
                   <label for="cpf">CPF <span class="required">*</span></label>
-                  <input
-                    type="text"
-                    id="cpf"
-                    name="cpf"
-                    maxlength="14"
-                    required
-                  />
+                  <input type="text" id="cpf" name="cpf" maxlength="14" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
               </div>
               <div>
                 <div>
-                  <label for="telefone"
-                    >TELEFONE <span class="required">*</span></label
-                  >
-                  <input
-                    type="text"
-                    id="telefone"
-                    name="telefone"
-                    required
-                    maxlength="14"
-                  />
+                  <label for="telefone">TELEFONE <span class="required">*</span></label>
+                  <input type="text" id="telefone" name="telefone" required maxlength="14" />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
                 <div>
@@ -262,32 +145,16 @@
                 </div>
               </div>
               <div class="base-row">
-                <label for="anexoDoc"
-                  >ANEXE UM DOCUMENTO (CPF, RG OU CNH)
-                  <span class="required">*</span></label
-                >
-                <input
-                  id="anexoDoc"
-                  type="file"
-                  onchange="escolheArquivo(event)"
-                  accept=".png,.pdf,.jpg"
-                  name="anexoDoc"
-                  required
-                />
+                <label for="anexoDoc">ANEXE UM DOCUMENTO (CPF, RG OU CNH)
+                  <span class="required">*</span></label>
+                <input id="anexoDoc" type="file" onchange="escolheArquivo(event)" accept=".png,.pdf,.jpg"
+                  name="anexoDoc" required />
                 <p class="input-invalido">Este campo é obrigatório</p>
               </div>
               <div class="base-row">
-                <label for="anexoVinculo"
-                  >COMPROVANTE DE VÍNCULO <span class="required">*</span></label
-                >
-                <input
-                  id="anexoVinculo"
-                  type="file"
-                  onchange="escolheArquivo(event)"
-                  accept=".png,.pdf,.jpg"
-                  name="anexoVinculo"
-                  required
-                />
+                <label for="anexoVinculo">COMPROVANTE DE VÍNCULO <span class="required">*</span></label>
+                <input id="anexoVinculo" type="file" onchange="escolheArquivo(event)" accept=".png,.pdf,.jpg"
+                  name="anexoVinculo" required />
                 <p class="input-invalido">Este campo é obrigatório</p>
               </div>
               <h5 class="form-title">
@@ -296,86 +163,47 @@
               <div>
                 <div>
                   <label for="cep">CEP <span class="required">*</span></label>
-                  <input
-                    type="text"
-                    id="cep"
-                    name="cep"
-                    maxlength="9"
-                    required
-                  />
+                  <input type="text" id="cep" name="cep" maxlength="9" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
-                  <button
-                    type="button"
-                    onclick="consultaCEP(document.getElementById('cep').value)"
-                  >
+                  <button type="button" onclick="consultaCEP(document.getElementById('cep').value)">
                     Consultar CEP
                   </button>
                 </div>
                 <div data-user="paciente">
-                  <label for="estado"
-                    >ESTADO <span class="required">*</span></label
-                  >
+                  <label for="estado">ESTADO <span class="required">*</span></label>
                   <input type="text" id="estado" name="estado" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
               </div>
               <div>
                 <div>
-                  <label for="cidade"
-                    >CIDADE <span class="required">*</span></label
-                  >
+                  <label for="cidade">CIDADE <span class="required">*</span></label>
                   <input type="text" id="cidade" name="cidade" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
                 <div data-user="paciente">
-                  <label for="logradouro"
-                    >ENDEREÇO <span class="required">*</span></label
-                  >
-                  <input
-                    type="text"
-                    id="logradouro"
-                    name="logradouro"
-                    required
-                  />
+                  <label for="logradouro">ENDEREÇO <span class="required">*</span></label>
+                  <input type="text" id="logradouro" name="logradouro" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
               </div>
               <div>
                 <div data-user="paciente">
-                  <label for="numero"
-                    >NÚMERO <span class="required">*</span></label
-                  >
+                  <label for="numero">NÚMERO <span class="required">*</span></label>
                   <input type="text" id="numero" name="numero" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
                 <div data-user="paciente">
-                  <label for="complemento"
-                    >COMPLEMENTO <span class="required">*</span></label
-                  >
-                  <input
-                    type="text"
-                    id="complemento"
-                    name="complemento"
-                    required
-                  />
+                  <label for="complemento">COMPLEMENTO <span class="required">*</span></label>
+                  <input type="text" id="complemento" name="complemento" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
               </div>
               <div class="base-row">
-                <label for="docResidencia"
-                  >COMPROVANTE DE RESIDÊNCIA (MESMO ENDENREÇO DE ENTREGA)<span
-                    class="required"
-                    >*</span
-                  ></label
-                >
-                <input
-                  id="docResidencia"
-                  type="file"
-                  onchange="escolheArquivo(event)"
-                  accept=".png,.pdf,.jpg"
-                  name="docResidencia"
-                  required
-                />
+                <label for="docResidencia">COMPROVANTE DE RESIDÊNCIA (MESMO ENDENREÇO DE ENTREGA)<span
+                    class="required">*</span></label>
+                <input id="docResidencia" type="file" onchange="escolheArquivo(event)" accept=".png,.pdf,.jpg"
+                  name="docResidencia" required />
                 <p class="input-invalido">Este campo é obrigatório</p>
               </div>
             </div>
@@ -398,27 +226,14 @@
                   <label for="thc">THC</label>
                 </div>
                 <div>
-                  <input
-                    id="thcecdb"
-                    type="radio"
-                    name="receita"
-                    value="THC+CBD"
-                  />
+                  <input id="thcecdb" type="radio" name="receita" value="THC+CBD" />
                   <label for="thcecdb">THC+CBD</label>
                 </div>
               </div>
               <div class="base-row">
-                <label for="receitaMedica"
-                  >RECEITA MÉDICA <span class="required">*</span></label
-                >
-                <input
-                  id="receitaMedica"
-                  type="file"
-                  onchange="escolheArquivo(event)"
-                  accept=".png,.pdf,.jpg"
-                  name="receitaMedica"
-                  required
-                />
+                <label for="receitaMedica">RECEITA MÉDICA <span class="required">*</span></label>
+                <input id="receitaMedica" type="file" onchange="escolheArquivo(event)" accept=".png,.pdf,.jpg"
+                  name="receitaMedica" required />
                 <p class="input-invalido">Este campo é obrigatório</p>
                 <button type="button" id="adicionarReceita">Adicionar</button>
               </div>
@@ -437,9 +252,7 @@
               </div>
               <div>
                 <div class="base-row">
-                  <label for="nomeMedico"
-                    >NOME DO MÉDICO <span class="required">*</span></label
-                  >
+                  <label for="nomeMedico">NOME DO MÉDICO <span class="required">*</span></label>
                   <input type="text" name="nomeMedico" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
                   <label for="crm">CRM<span class="required">*</span></label>
@@ -449,59 +262,30 @@
               </div>
               <div>
                 <div class="base-row">
-                  <label for="especialidadeMedico"
-                    >ESPECIALIDADE<span class="required">*</span></label
-                  >
+                  <label for="especialidadeMedico">ESPECIALIDADE<span class="required">*</span></label>
                   <input type="text" name="especialidadeMedico" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
                 <div class="base-row">
-                  <label for="cidadeMedico"
-                    >CIDADE <span class="required">*</span></label
-                  >
-                  <input
-                    type="text"
-                    id="cidadeMedico"
-                    name="cidadeMedico"
-                    required
-                  />
+                  <label for="cidadeMedico">CIDADE <span class="required">*</span></label>
+                  <input type="text" id="cidadeMedico" name="cidadeMedico" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
               </div>
               <div>
                 <div class="base-row">
-                  <label for="telefoneMedico"
-                    >TELEFONE <span class="required">*</span></label
-                  >
-                  <input
-                    type="text"
-                    id="telefoneMedico"
-                    name="telefoneMedico"
-                    required
-                  />
+                  <label for="telefoneMedico">TELEFONE <span class="required">*</span></label>
+                  <input type="text" id="telefoneMedico" name="telefoneMedico" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
                 <div class="base-row">
-                  <label for="emailMedico"
-                    >EMAIL <span class="required">*</span></label
-                  >
-                  <input
-                    type="text"
-                    id="emailMedico"
-                    name="emailMedico"
-                    required
-                  />
+                  <label for="emailMedico">EMAIL <span class="required">*</span></label>
+                  <input type="text" id="emailMedico" name="emailMedico" required />
                   <p class="input-invalido">Este campo é obrigatório</p>
                 </div>
               </div>
               <h5>AUTORIZAÇÃO ANVISA:<span class="required">*</span></h5>
-              <input
-                type="file"
-                onchange="escolheArquivo(event)"
-                accept=".png,.pdf,.jpg"
-                name="anexoAnvisa"
-                required
-              />
+              <input type="file" onchange="escolheArquivo(event)" accept=".png,.pdf,.jpg" name="anexoAnvisa" required />
               <p class="input-invalido">Este campo é obrigatório</p>
               <h5>OBSERVAÇÕES:</h5>
               <input type="textarea" name="observacoes" />
