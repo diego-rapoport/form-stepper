@@ -241,23 +241,24 @@ function limpaAviso(step) {
 }
 
 function confirmaCampos() {
-  const senha = document.getElementById('reg_password').value
-  const confirmaSenha = document.getElementById('conf_reg_password').value
+  const senha = document.getElementById('reg_password')
+  const confirmaSenha = document.getElementById('conf_reg_password')
 
-  if (senha !== confirmaSenha) {
-    const mensagemErro = document.getElementById('confirma_senha')
-    mensagemErro.innerHTML = 'As senhas não correspondem'
-    mensagemErro.style.display = 'block'
+  if (senha.value !== confirmaSenha.value) {
+    mostraErro(confirmaSenha, 'As senhas não correspondem')
     return false
   }
 
-  // const email = document.getElementById('reg_email').value
-  // const confirmaEmail = document.getElementById('conf_reg_email').value
-  // if (email && confirmaEmail && email !== confirmaEmail) {
-  // const mensagemErro = document.getElementById('confirma_email')
-  // mensagemErro.innerHTML = 'Os emails não correspondem'
-  // mensagemErro.style.display = 'block'
-  // }
+  const email = document.getElementById('reg_email')
+  const confirmaEmail = document.getElementById('conf_reg_email')
+  if (
+    email.value &&
+    confirmaEmail.value &&
+    email.value !== confirmaEmail.value
+  ) {
+    mostraErro(confirmaEmail, 'Os emails não correspondem')
+    return false
+  }
 
   return true
 }
