@@ -7,6 +7,10 @@ input {
   height: 2rem;
 }
 
+.input-text {
+  width: 40rem;
+}
+
 .outer-form {
   padding: 3rem;
 }
