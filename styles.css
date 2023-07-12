@@ -150,14 +150,13 @@ td {
 }
 
 .input-invalido {
-  color: darkred;
   display: none;
-}
-
-.input-invalido::before {
-  font-family: Dashicons;
-  font-size: calc(100% + 10px);
-  content: '\f534';
+  margin: 0 0.1rem;
+  color: darkred;
+  background-color: #ff4e4e33;
+  width: 40%;
+  box-shadow: 4px 3px 4px;
+  padding-left: 0.5rem;
 }
 
 .form-row {
@@ -189,6 +188,6 @@ td {
   border: 1px black solid;
 }
 
-.max-h-20 {
-  max-height: 4rem;
+.buttons {
+  margin-top: 1rem;
 }

@@ -459,4 +459,5 @@ function setPrimeiro() {
 window.onload = function () {
   formControl()
   mascaras()
+  twemoji.parse(document.body)
 }
