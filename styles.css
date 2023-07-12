@@ -1,3 +1,7 @@
+.outer-form {
+  padding: 3rem;
+}
+
 .base-flex {
   display: flex;
 }
