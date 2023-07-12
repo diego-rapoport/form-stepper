@@ -1,5 +1,17 @@
+h4 {
+  margin-bottom: 1rem;
+}
+
 .outer-form {
   padding: 3rem;
+}
+
+.cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: center;
 }
 
 .base-flex {
