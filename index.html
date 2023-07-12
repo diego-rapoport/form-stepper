@@ -105,8 +105,10 @@
                 <p class="input-invalido">Este campo é obrigatório</p>
               </div>
               <div class="form-row">
-                <label for="anexoDocRepresentante">ANEXE UM DOCUMENTO (CPF, RG OU CNH)
-                  <span class="required">*</span></label>
+                <h5 for="anexoDocRepresentante">
+                  ANEXE UM DOCUMENTO (CPF, RG OU CNH)
+                  <span class="required">*</span>
+                </h5>
                 <input id="anexoDocRepresentante" type="file" accept=".png,.pdf,.jpg" name="anexoDocRepresentante"
                   required onchange="escolheArquivo(event)" />
                 <p class="input-invalido">Este campo é obrigatório</p>
@@ -149,8 +151,10 @@
               <input type="text" id="profissao" name="profissao" class="input-text" />
             </div>
             <div class="form-row">
-              <label for="anexoDoc">ANEXE UM DOCUMENTO (CPF, RG OU CNH)
-                <span class="required">*</span></label>
+              <h5 for="anexoDoc">
+                ANEXE UM DOCUMENTO (CPF, RG OU CNH)
+                <span class="required">*</span>
+              </h5>
               <input id="anexoDoc" type="file" onchange="escolheArquivo(event)" accept=".png,.pdf,.jpg" name="anexoDoc"
                 required />
               <p class="input-invalido">Este campo é obrigatório</p>
@@ -195,8 +199,9 @@
               <p class="input-invalido">Este campo é obrigatório</p>
             </div>
             <div class="form-row">
-              <label for="docResidencia">COMPROVANTE DE RESIDÊNCIA (MESMO ENDENREÇO DE ENTREGA)<span
-                  class="required">*</span></label>
+              <h5 for="docResidencia">
+                COMPROVANTE DE RESIDÊNCIA (MESMO ENDENREÇO DE ENTREGA)<span class="required">*</span>
+              </h5>
               <input id="docResidencia" type="file" onchange="escolheArquivo(event)" accept=".png,.pdf,.jpg"
                 name="docResidencia" required />
               <p class="input-invalido">Este campo é obrigatório</p>
@@ -244,23 +249,26 @@
               <p class="input-invalido">Este campo é obrigatório</p>
             </div>
             <div class="form-row">
-              <label for="receitaMedica">RECEITA MÉDICA <span class="required">*</span></label>
+              <h5 for="receitaMedica">
+                RECEITA MÉDICA <span class="required">*</span>
+              </h5>
               <input id="receitaMedica" type="file" onchange="escolheArquivo(event)" accept=".png,.pdf,.jpg"
                 name="receitaMedica" required />
               <p class="input-invalido">Este campo é obrigatório</p>
               <button type="button" id="adicionarReceita">Adicionar</button>
             </div>
             <div class="form-row">
+              <h5>Tipo de Receita <span class="required">*</span></h5>
               <div class="radio-row">
-                <input id="thc" type="radio" name="receita" value="THC" />
+                <input id="thc" type="radio" name="receita" value="THC" required />
                 <label for="thc">THC</label>
               </div>
               <div class="radio-row">
-                <input id="cbd" type="radio" name="receita" value="CBD" />
+                <input id="cbd" type="radio" name="receita" value="CBD" required />
                 <label for="cbd">CBD</label>
               </div>
               <div class="radio-row">
-                <input id="thcecdb" type="radio" name="receita" value="THC+CBD" />
+                <input id="thcecdb" type="radio" name="receita" value="THC+CBD" required />
                 <label for="thcecdb">THC+CBD</label>
               </div>
             </div>

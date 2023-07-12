@@ -27,6 +27,7 @@ input {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 1fr;
+  max-height: 30rem;
 }
 
 .base-flex {
@@ -167,4 +168,8 @@ input {
 
 .lista-receitas {
   border: 1px black solid;
+}
+
+.max-h-20 {
+  max-height: 4rem;
 }
