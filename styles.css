@@ -2,6 +2,11 @@ h4 {
   margin-bottom: 1rem;
 }
 
+input {
+  max-width: 70%;
+  height: 2rem;
+}
+
 .outer-form {
   padding: 3rem;
 }
@@ -129,9 +134,4 @@ h4 {
 
 .lista-receitas {
   border: 1px black solid;
-}
-
-input {
-  max-width: 70%;
-  height: 2rem;
 }
