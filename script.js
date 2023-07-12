@@ -1,3 +1,9 @@
+function retiraRequeridos() {
+  document.querySelectorAll('input[required]').forEach((item) => {
+    item.required = false
+  })
+}
+
 console.log('form-script loaded')
 const form = document.getElementById('form')
 let tipoUsuarioSelecionado = 'paciente'

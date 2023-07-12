@@ -8,7 +8,7 @@ input {
 }
 
 .input-text {
-  width: 40rem;
+  width: 32rem;
 }
 
 .outer-form {
@@ -21,6 +21,12 @@ input {
   flex-direction: column;
   align-items: flex-start;
   align-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
 }
 
 .base-flex {
@@ -142,6 +148,16 @@ input {
   align-content: center;
   width: 100%;
   margin-bottom: 1rem;
+}
+
+.radio-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+[type='radio'] {
+  margin-right: 1rem;
 }
 
 .is-layout-flex {
