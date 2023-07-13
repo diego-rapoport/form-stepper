@@ -455,6 +455,13 @@ function formControl() {
       nascimento.nextElementSibling.style.display = 'none'
       nascimento.setCustomValidity('')
     })
+
+  document.getElementById('form').addEventListener('submit', (e) => {
+    e.preventDefault()
+    const formData = Object.fromEntries(new FormData(e.target))
+    formData.listaReceitas = listaReceitas
+    // adicionar backend
+  })
 }
 
 function setPrimeiro() {
