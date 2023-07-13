@@ -327,6 +327,7 @@ function contentPraFrente(dataStep) {
 }
 
 function formControl() {
+  let listaReceitas = []
   document.querySelectorAll('[data-set-step]').forEach((element) => {
     const step = element.dataset.setStep
     element.onclick = (event) => {
@@ -417,26 +418,29 @@ function formControl() {
       return receita.checked
     })
     if (!tipoReceita.length) {
-      mostraErro(upload, 'É preciso escolher o tipo de receita acima')
+      mostraErro(upload, 'É preciso escolher o tipo de receita')
       return
     }
     if (!nomeReceita) {
-      mostraErro(upload, 'É preciso escolher um arquivo')
+      mostraErro(upload, 'É preciso escolher uma receita')
       return
     }
     upload.nextElementSibling.style.display = 'none'
-    upload.value = ''
 
     const bodyTabela = document
       .getElementById('tabelaReceitas')
       .getElementsByTagName('tbody')[0]
     const novaLinha = bodyTabela.insertRow()
+    novaLinha.upload = upload.files.item(0)
     const celulaArquivo = novaLinha.insertCell()
     const nodoReceita = document.createTextNode(nomeReceita)
     celulaArquivo.append(nodoReceita)
     const celulaTipoReceita = novaLinha.insertCell()
     const nodoTipoReceita = document.createTextNode(tipoReceita[0].value)
     celulaTipoReceita.append(nodoTipoReceita)
+    listaReceitas.push(upload.files.item(0))
+
+    upload.value = ''
   })
 
   document

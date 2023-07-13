@@ -14,11 +14,12 @@ table {
 
 thead {
   background-color: #eee;
+  text-align: left;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #eee;
-}
+/* tbody tr:nth-child(even) { */
+/* background-color: #eeeeee65; */
+/* } */
 
 td {
   border: 1px black solid;
