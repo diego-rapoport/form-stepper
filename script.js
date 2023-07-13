@@ -16,25 +16,29 @@ function preencheCEP(response) {
 }
 
 function consultaCEP(cep) {
+  const localErro = document.getElementById('cep')
   const parsedCEP = cep.replace(/-/, '')
+  if (!parsedCEP || parsedCEP.length < 8) {
+    mostraErro(localErro, 'É necessário inserir um CEP válido primeiro')
+    return
+  }
   const url = 'https://viacep.com.br/ws/' + parsedCEP + '/json'
   const request = new XMLHttpRequest()
-  const localErro = document.getElementById('cep').nextElementSibling
 
   request.open('GET', url)
   request.onerror = function (e) {
-    localErro.innerHTML =
+    mostraErro(
+      localErro,
       'Algum erro ocorreu. Tente novamente ou consulte suporte.'
-    localErro.style.display = 'block'
-    console.log('ERRO = ', e)
+    )
+    console.log('Erro request ', e)
   }
 
   request.onload = () => {
     const response = JSON.parse(request.responseText)
 
     if (response.erro === true) {
-      localErro.innerHTML = 'CEP Não Encontrado'
-      localErro.style.display = 'block'
+      mostraErro(localErro, 'CEP Não Encontrado')
       return
     } else {
       console.log('response = ', response)
