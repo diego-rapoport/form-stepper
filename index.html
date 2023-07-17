@@ -72,14 +72,14 @@
         </div>
         <hr />
         <div class="buttons">
-          <a href="#" class="btn" data-set-step="2">Continuar</a>
+          <button type="button" class="btn" data-set-step="2">Continuar</button>
         </div>
       </div>
 
       <div class="step-content" data-step="2">
         <div class="form-row">
           <div data-user="representante">
-            <h5 class="form-title">REPRESENTANTE DO PACIENTE:</h5>
+            <h3 class="form-title">REPRESENTANTE DO PACIENTE:</h3>
             <div class="container">
               <div class="form-row">
                 <label for="nomeRepresentante">NOME COMPLETO DO REPRESENTANTE
@@ -106,17 +106,17 @@
                 <p class="input-invalido">Este campo é obrigatório</p>
               </div>
               <div class="form-row">
-                <h5 for="anexoDocRepresentante">
+                <label for="anexoDocRepresentante" class="file">
                   ANEXE UM DOCUMENTO (CPF, RG OU CNH)
-                  <span class="required">*</span>
-                </h5>
+                  <span class="required fg-white">*</span>
+                </label>
                 <input id="anexoDocRepresentante" type="file" accept=".png,.pdf,.jpg" name="anexoDocRepresentante"
                   required onchange="escolheArquivo(event)" />
                 <p class="input-invalido">Este campo é obrigatório</p>
               </div>
               <div class="form-row">
-                <label for="anexoVinculo">COMPROVANTE DE VÍNCULO
-                  <span class="required">*</span></label>
+                <label for="anexoVinculo" class="file">COMPROVANTE DE VÍNCULO
+                  <span class="required fg-white">*</span></label>
                 <input id="anexoVinculo" type="file" onchange="escolheArquivo(event)" accept=".png,.pdf,.jpg"
                   name="anexoVinculo" required />
                 <p class="input-invalido">Este campo é obrigatório</p>
@@ -124,7 +124,7 @@
             </div>
           </div>
 
-          <h5 class="form-title">PACIENTE:</h5>
+          <h3 class="form-title">PACIENTE:</h3>
           <div class="container">
             <div class="form-row">
               <label for="nomePaciente">NOME COMPLETO DO PACIENTE
@@ -152,25 +152,25 @@
               <input type="text" id="profissao" name="profissao" class="input-text" />
             </div>
             <div class="form-row">
-              <h5 for="anexoDoc">
+              <label for="anexoDoc" class="file">
                 ANEXE UM DOCUMENTO (CPF, RG OU CNH)
-                <span class="required">*</span>
-              </h5>
+                <span class="required fg-white">*</span>
+              </label>
               <input id="anexoDoc" type="file" onchange="escolheArquivo(event)" accept=".png,.pdf,.jpg" name="anexoDoc"
                 required />
               <p class="input-invalido">Este campo é obrigatório</p>
             </div>
           </div>
 
-          <h5 class="form-title">
+          <h3 class="form-title">
             ENDEREÇO QUE RESIDE O PACIENTE: (ENDEREÇO DE ENTREGA)
-          </h5>
+          </h3>
           <div class="container">
             <div class="form-row">
               <label for="cep">CEP <span class="required">*</span></label>
               <input type="text" id="cep" name="cep" maxlength="9" required class="input-text" />
               <p class="input-invalido">Este campo é obrigatório</p>
-              <button type="button" onclick="consultaCEP(document.getElementById('cep').value)">
+              <button type="button" class="consulta-cep" onclick="consultaCEP(document.getElementById('cep').value)">
                 Consultar CEP
               </button>
             </div>
@@ -200,9 +200,9 @@
               <p class="input-invalido">Este campo é obrigatório</p>
             </div>
             <div class="form-row">
-              <h5 for="docResidencia">
-                COMPROVANTE DE RESIDÊNCIA (MESMO ENDENREÇO DE ENTREGA)<span class="required">*</span>
-              </h5>
+              <label for="docResidencia" class="file">
+                COMPROVANTE DE RESIDÊNCIA (MESMO ENDENREÇO DE ENTREGA)<span class="required fg-white">*</span>
+              </label>
               <input id="docResidencia" type="file" onchange="escolheArquivo(event)" accept=".png,.pdf,.jpg"
                 name="docResidencia" required />
               <p class="input-invalido">Este campo é obrigatório</p>
@@ -210,14 +210,14 @@
           </div>
         </div>
         <div class="buttons">
-          <a href="#" class="btn" data-set-step="1">Voltar</a>
-          <a href="#" class="btn" data-set-step="3">Continuar</a>
+          <button type="button" class="btn" data-set-step="1">Voltar</button>
+          <button type="button" class="btn" data-set-step="3">Continuar</button>
         </div>
       </div>
 
       <div class="step-content" data-step="3">
         <div class="fields">
-          <h5>MEDICAÇÃO:</h5>
+          <h3>MEDICAÇÃO:</h3>
           <div class="container">
             <div class="form-row">
               <label for="nomeMedico">NOME DO MÉDICO <span class="required">*</span></label>
@@ -250,16 +250,16 @@
               <p class="input-invalido">Este campo é obrigatório</p>
             </div>
             <div class="form-row">
-              <h5 for="receitaMedica">
-                RECEITA MÉDICA <span class="required">*</span>
-              </h5>
+              <label for="receitaMedica" class="file">
+                RECEITA MÉDICA <span class="required fg-white">*</span>
+              </label>
               <input id="receitaMedica" type="file" onchange="escolheArquivo(event)" accept=".png,.pdf,.jpg"
                 name="receitaMedica" required />
               <p class="input-invalido">Este campo é obrigatório</p>
               <button type="button" id="adicionarReceita">Adicionar</button>
             </div>
             <div class="form-row">
-              <h5>Tipo de Receita <span class="required">*</span></h5>
+              <h3>Tipo de Receita <span class="required">*</span></h3>
               <div class="radio-row">
                 <input id="thc" type="radio" name="receita" value="THC" required />
                 <label for="thc">THC</label>
@@ -291,26 +291,26 @@
 
           <div class="container">
             <div class="form-row">
-              <h5>AUTORIZAÇÃO ANVISA:<span class="required">*</span></h5>
+              <label class="file">AUTORIZAÇÃO ANVISA<span class="required fg-white">*</span></label>
               <input type="file" onchange="escolheArquivo(event)" accept=".png,.pdf,.jpg" name="anexoAnvisa" required />
               <p class="input-invalido">Este campo é obrigatório</p>
             </div>
             <div class="form-row">
-              <h5>OBSERVAÇÕES:</h5>
+              <h3>OBSERVAÇÕES:</h3>
               <input type="textarea" name="observacoes" />
             </div>
           </div>
         </div>
 
         <div class="buttons">
-          <a href="#" class="btn" data-set-step="2">Voltar</a>
-          <a href="#" class="btn" data-set-step="4">Continuar</a>
+          <button type="button" class="btn" data-set-step="2">Voltar</button>
+          <button type="button" class="btn" data-set-step="4">Continuar</button>
         </div>
       </div>
 
       <div class="step-content" data-step="4">
         <div class="buttons">
-          <a href="#" class="btn" data-set-step="3">Voltar</a>
+          <button type="button" class="btn" data-set-step="3">Voltar</button>
           <button type="submit">Finalizar</button>
         </div>
       </div>

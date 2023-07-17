@@ -41,7 +41,6 @@ function consultaCEP(cep) {
       mostraErro(localErro, 'CEP Não Encontrado')
       return
     } else {
-      console.log('response = ', response)
       preencheCEP(response)
       localErro.style.display = 'none'
     }
@@ -460,6 +459,7 @@ function formControl() {
     e.preventDefault()
     const formData = Object.fromEntries(new FormData(e.target))
     formData.listaReceitas = listaReceitas
+    formData.tipoUsuario = tipoUsuarioSelecionado
     // adicionar backend
   })
 }

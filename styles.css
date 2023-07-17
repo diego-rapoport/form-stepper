@@ -1,10 +1,96 @@
+:root {
+  --primary-color: #0b6e4f;
+  --secondary-color: #6bbf59;
+  --dark-color: #073b3a;
+  --light-color: #ddb771;
+  --black-color: #021212;
+  --white-color: #ecfdf8;
+}
+
+* {
+  color: var(--dark-color);
+}
+
+*,
+*:after {
+  box-sizing: border-box;
+}
+
 h4 {
   margin-bottom: 1rem;
+}
+
+button {
+  cursor: pointer;
+  transition: 500ms ease-out;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border-style: unset;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+}
+
+button:hover {
+  transform: scale(1.05);
+  transition: 100ms ease-in;
+}
+
+button:active {
+  box-shadow: inset -2px -3px 10px -2px var(--secondary-color);
+  transition: unset;
+}
+
+.consulta-cep {
+  position: absolute;
+  left: 32.7rem;
+  bottom: 8.7rem;
 }
 
 input {
   max-width: 70%;
   height: 2rem;
+  border-radius: 8px;
+}
+
+input[type='radio'] {
+  appearance: none;
+  --webkit-appearence: none;
+  margin: 0;
+  margin-right: 0.3rem;
+  background-color: white;
+  cursor: pointer;
+  font: inherit;
+  color: var(--secondary-color);
+  width: 1rem;
+  height: 1rem;
+  border: 0.2em solid var(--secondary-color);
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+input[type='radio']:hover {
+  background-color: var(--black-color);
+  transform: scale(1);
+  transition: 0.2s ease-in;
+}
+
+input[type='radio']::before {
+  content: '';
+  width: 0.5rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--primary-color);
+}
+
+input[type='radio']:checked::before {
+  transform: scale(1);
+}
+
+input[type='radio'] ~ label {
+  cursor: pointer;
 }
 
 table {
@@ -13,7 +99,7 @@ table {
 }
 
 thead {
-  background-color: #eee;
+  background-color: var(--white-color);
   text-align: left;
 }
 
@@ -22,13 +108,21 @@ thead {
 /* } */
 
 td {
-  border: 1px black solid;
+  border: 1px var(--black-color) solid;
   padding-left: 0.2rem;
   border-width: 1px 0 0 0;
 }
 
 .input-text {
   width: 32rem;
+  border: 1px solid var(--black-color);
+  padding: 0 0.3rem;
+}
+
+.input-text:hover {
+  box-shadow: inset 0px 0px 4px 0px var(--secondary-color);
+  border: 0.1rem solid var(--primary-color);
+  transition: 250ms ease-in;
 }
 
 .outer-form {
@@ -74,12 +168,12 @@ td {
   border-radius: 50%;
   width: 17px;
   height: 17px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--white-color);
   border-left: none;
   display: block;
   text-align: center;
   margin: 2px auto 0px;
-  background-color: #eee;
+  background-color: var(--white-color);
   padding: 0.5rem;
 }
 
@@ -88,8 +182,8 @@ td {
   position: absolute;
   width: 97%;
   height: 5px;
-  background-color: #eee;
-  border: 1px solid #ddd;
+  background-color: var(--white-color);
+  border: 1px solid var(--light-color);
   border-right: none;
   top: 15px;
   left: -50%;
@@ -101,37 +195,39 @@ td {
 }
 
 .steps li.current {
-  color: black;
+  color: var(--black-color);
 }
 
 .steps li.current:before {
-  border-color: black;
-  background-color: black;
+  /* border-color: black; */
+  background-color: var(--dark-color);
 }
 
 .steps .current:after {
-  background-color: black;
+  background-color: var(--dark-color);
 }
 
 .steps .passou:after {
-  background-color: black;
+  background-color: var(--black-color);
 }
 
 .passou:before {
-  background-color: black !important;
-  border-color: black !important;
+  background-color: var(--black-color) !important;
+  border-color: var(--black-color) !important;
 }
 
 .numero {
   position: relative;
   bottom: 2.8rem;
-  color: white;
+  color: var(--white-color);
+  cursor: default;
 }
 
 .numero-inativo {
   position: relative;
   bottom: 2.8rem;
-  color: black;
+  color: var(--black-color);
+  cursor: default;
 }
 
 .step-content {
@@ -155,9 +251,8 @@ td {
   margin: 0 0.1rem;
   color: darkred;
   background-color: #ff4e4e33;
-  width: 40%;
   box-shadow: 4px 3px 4px;
-  padding-left: 0.5rem;
+  padding: 0.1rem 0.5rem;
 }
 
 .form-row {
@@ -186,9 +281,51 @@ td {
 }
 
 .lista-receitas {
-  border: 1px black solid;
+  border: 1px var(--black-color) solid;
 }
 
 .buttons {
   margin-top: 1rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid var(--black-color);
+  -webkit-text-fill-color: var(--black-color);
+  -webkit-box-shadow: 0 0 0px 1000px var(--white-color) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  border-radius: 8px;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+/* Aparência que terá o seletor de arquivo */
+label.file {
+  background-color: var(--dark-color);
+  border-radius: 8px;
+  color: var(--white-color);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.fg-white {
+  color: var(--white-color);
+}
+
+div:has(input[type='file']) {
+  margin: 0;
+  justify-content: center;
 }
